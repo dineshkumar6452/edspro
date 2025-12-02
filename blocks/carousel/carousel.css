@@ -16,8 +16,9 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 20;
-  background: rgba(255,255,255,0.9);
-  border: 1px solid #ddd;
+  /* use modern rgb() with alpha percentage */
+  background: rgb(255 255 255 / 90%);
+  border: 1px solid rgb(221 221 221 / 100%);
   border-radius: 24px;
   width: 36px;
   height: 36px;
@@ -28,4 +29,4 @@
 }
 .carousel-prev { left: 8px; }
 .carousel-next { right: 8px; }
-.carousel-prev:focus, .carousel-next:focus { outline: 2px solid #005fcc; }
+.carousel-prev:focus, .carousel-next:focus { outline: 2px solid rgb(0 95 204 / 100%); }
