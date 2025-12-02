@@ -1,14 +1,31 @@
-.carousel {
-  overflow: hidden;
+.carousel-list {
   position: relative;
+  padding: 12px 40px; /* leave room for buttons */
 }
 
-.carousel div {
-  display: flex;
-  gap: 16px;
-  scroll-behavior: smooth;
+.carousel-item {
+  background: transparent;
+  border-radius: 6px;
+  overflow: hidden;
 }
-.carousel img {
-  width: 100%;
-  border-radius: 8px;
+
+/* Prev/Next buttons */
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid #ddd;
+  border-radius: 24px;
+  width: 36px;
+  height: 36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor: pointer;
 }
+.carousel-prev { left: 8px; }
+.carousel-next { right: 8px; }
+.carousel-prev:focus, .carousel-next:focus { outline: 2px solid #005fcc; }
