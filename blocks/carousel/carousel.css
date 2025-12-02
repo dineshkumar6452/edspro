@@ -16,6 +16,7 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 20;
+
   /* use modern rgb() with alpha percentage */
   background: rgb(255 255 255 / 90%);
   border: 1px solid rgb(221 221 221 / 100%);
