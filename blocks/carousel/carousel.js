@@ -3,7 +3,6 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default function decorate(block) {
   try {
-
     // Build ul/li structure (same approach as card.js)
     const ul = document.createElement('ul');
     ul.className = 'carousel-list';
@@ -76,8 +75,8 @@ export default function decorate(block) {
       if (e.key === 'ArrowRight') ul.scrollBy({ left: 300, behavior: 'smooth' });
       if (e.key === 'ArrowLeft') ul.scrollBy({ left: -300, behavior: 'smooth' });
     });
-
-    
   } catch (err) {
+    /* eslint-disable-next-line no-console */
+    console.error('[carousel] decorate error', err);
   }
 }
