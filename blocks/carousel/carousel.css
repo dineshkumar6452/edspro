@@ -1,0 +1,14 @@
+.carousel {
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel div {
+  display: flex;
+  gap: 16px;
+  scroll-behavior: smooth;
+}
+.carousel img {
+  width: 100%;
+  border-radius: 8px;
+}
