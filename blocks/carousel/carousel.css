@@ -1,33 +1,104 @@
+/* blocks/carousel/carousel.css */
+
 .carousel-list {
-  position: relative;
-  padding: 12px 40px; /* leave room for buttons */
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 16px 56px;
+  margin: 0;
+  list-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel-list::-webkit-scrollbar {
+  height: 8px;
+}
+
+.carousel-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.carousel-list::-webkit-scrollbar-thumb {
+  background: rgb(0 0 0 / 12%);
+  border-radius: 4px;
+}
+
+@supports (scrollbar-width: thin) {
+  .carousel-list {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(0 0 0 / 12%) transparent;
+  }
 }
 
 .carousel-item {
+  flex: 0 0 auto;
+  min-width: 320px;
+  max-width: 46%;
+  box-sizing: border-box;
   background: transparent;
   border-radius: 6px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Prev/Next buttons */
+.carousel-item picture,
+.carousel-item img {
+  width: 100%;
+  height: 220px;
+  display: block;
+  object-fit: cover;
+}
+
+@media (width >= 1024px) {
+  .carousel-item picture,
+  .carousel-item img {
+    height: 320px;
+  }
+}
+
 .carousel-prev,
 .carousel-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 20;
-
-  /* use modern rgb() with alpha percentage */
-  background: rgb(255 255 255 / 90%);
-  border: 1px solid rgb(221 221 221 / 100%);
-  border-radius: 24px;
-  width: 36px;
-  height: 36px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  z-index: 40;
+  background: rgb(59 130 246 / 95%);
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 12%);
   cursor: pointer;
 }
-.carousel-prev { left: 8px; }
-.carousel-next { right: 8px; }
-.carousel-prev:focus, .carousel-next:focus { outline: 2px solid rgb(0 95 204 / 100%); }
+
+.carousel-prev {
+  left: 12px;
+}
+
+.carousel-next {
+  right: 12px;
+}
+
+.carousel-prev:focus,
+.carousel-next:focus {
+  outline: 3px solid rgb(255 255 255 / 30%);
+}
+
+@media (width <= 640px) {
+  .carousel-item {
+    min-width: 260px;
+    max-width: 85%;
+  }
+
+  .carousel-prev,
+  .carousel-next {
+    width: 36px;
+    height: 36px;
+  }
+}
